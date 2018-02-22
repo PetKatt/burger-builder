@@ -22,7 +22,7 @@ class App extends Component {
 			]
 		});
 	}*/
-
+  
   deletePersonHandler = (personIndex) => {
     //const persons = this.state.persons.slice();
     const persons = [...this.state.persons];
