@@ -88,6 +88,12 @@ class BurgerBuilder extends PureComponent {
 		}));
 	};
 
+	purchaseCancelHandler = () => {
+		this.setState(() => ({
+			purchasing: false
+		}));
+	};
+
 	render() {
 		const disabledInfo = {
 			...this.state.ingredients
@@ -98,7 +104,7 @@ class BurgerBuilder extends PureComponent {
 
 		return (
 			<React.Fragment>
-				<Modal show={this.state.purchasing}>
+				<Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
 					<OrderSummary ingredients={this.state.ingredients} />
 				</Modal>
 				<Burger ingredients={this.state.ingredients} />
